@@ -11,7 +11,10 @@ import SwiftUI
 struct WeatherApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GeometryReader { proxy in
+                HomeView(topEdge: proxy.safeAreaInsets.top)
+                    .ignoresSafeArea(.all, edges: .top)
+            }
         }
     }
 }
