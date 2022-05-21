@@ -16,7 +16,9 @@
 		BE1A71A9282AA00B00CA453C /* Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A71A8282AA00B00CA453C /* Corners.swift */; };
 		BE1A71AD282AB5DA00CA453C /* ForecastColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A71AC282AB5DA00CA453C /* ForecastColumnView.swift */; };
 		BE1A71B3282ADD3300CA453C /* CGFloat+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A71B2282ADD3300CA453C /* CGFloat+Additions.swift */; };
+		BE3B7D5E2838EEF000671CC1 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B7D5D2838EEF000671CC1 /* Global.swift */; };
 		BEA4866C282BC88600C7EBD3 /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */; };
+		BEB2053528380507005AC286 /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB2053428380507005AC286 /* FramePreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +32,9 @@
 		BE1A71A8282AA00B00CA453C /* Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
 		BE1A71AC282AB5DA00CA453C /* ForecastColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastColumnView.swift; sourceTree = "<group>"; };
 		BE1A71B2282ADD3300CA453C /* CGFloat+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Additions.swift"; sourceTree = "<group>"; };
+		BE3B7D5D2838EEF000671CC1 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
+		BEB2053428380507005AC286 /* FramePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramePreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				BE1A7194282A677000CA453C /* WeatherApp.swift */,
+				BE3B7D5D2838EEF000671CC1 /* Global.swift */,
 				BE1A71A2282A6ED100CA453C /* Views */,
 				BE1A71B1282ADCCA00CA453C /* Extensions */,
 				BE1A7198282A677800CA453C /* Assets.xcassets */,
@@ -83,6 +88,7 @@
 		BE1A71A2282A6ED100CA453C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BEB20533283804EF005AC286 /* PreferenceKeys */,
 				BE1A71A7282A9FE400CA453C /* Shapes */,
 				BEA4866A282BC83D00C7EBD3 /* ForecastViews */,
 				BE1A7196282A677000CA453C /* HomeView.swift */,
@@ -115,6 +121,14 @@
 				BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */,
 			);
 			path = ForecastViews;
+			sourceTree = "<group>";
+		};
+		BEB20533283804EF005AC286 /* PreferenceKeys */ = {
+			isa = PBXGroup;
+			children = (
+				BEB2053428380507005AC286 /* FramePreferenceKey.swift */,
+			);
+			path = PreferenceKeys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,10 +203,12 @@
 			files = (
 				BEA4866C282BC88600C7EBD3 /* HourlyForecastView.swift in Sources */,
 				BE1A71A4282A6EF000CA453C /* CurrentWeatherView.swift in Sources */,
+				BEB2053528380507005AC286 /* FramePreferenceKey.swift in Sources */,
 				BE1A71A9282AA00B00CA453C /* Corners.swift in Sources */,
 				BE1A71B3282ADD3300CA453C /* CGFloat+Additions.swift in Sources */,
 				BE1A71AD282AB5DA00CA453C /* ForecastColumnView.swift in Sources */,
 				BE1A7197282A677000CA453C /* HomeView.swift in Sources */,
+				BE3B7D5E2838EEF000671CC1 /* Global.swift in Sources */,
 				BE1A71A6282A9E6B00CA453C /* ChunkView.swift in Sources */,
 				BE1A7195282A677000CA453C /* WeatherApp.swift in Sources */,
 			);

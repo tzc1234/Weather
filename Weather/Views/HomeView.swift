@@ -11,7 +11,7 @@ struct HomeView: View {
     
     @State private var offset: CGFloat = 0.0
     
-    private let currentWeatherViewOffsetThreshold: CGFloat = 12.0
+    private let topConstant: CGFloat = 25.0
     
     let topEdge: CGFloat
     
@@ -25,23 +25,21 @@ struct HomeView: View {
                     .overlay(.ultraThinMaterial)
                     .frame(width: proxy.size.width, height: proxy.size.height)
             }
-                
+            
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 20.0) {
-                    CurrentWeatherView(opacity: getTitleOpacity())
+                VStack(spacing: 0.0) {
+                    CurrentWeatherView(topEdge: topConstant + topEdge, offsetY: offset)
                         .offset(y: -offset)
-                        .offset(y: offset > 0 ? offset / .screenWidth * 100 : 0)
-                        .offset(y: getTitleOffset())
+                        .offset(y: offset > 0 ? offset / .screenWidth * 100 : 0) // drag down effect.
                     
-                    VStack {
-                        ForEach(0...9, id: \.self) { _ in
-                            HourlyForecastView()
-                        }
-                    }
-                     
+                    HourlyForecastView()
+                        .padding(.bottom, 20.0)
+                    
+                    Color.clear
+                        .border(.black, width: 1.0)
+                        .frame(height: 1400.0)
                 }
-                .padding(.top, 25)
-                .padding(.top, topEdge)
+                .padding(.top, topConstant + topEdge)
                 .padding([.horizontal, .bottom])
                 .overlay(
                     GeometryReader { proxy -> Color in
@@ -54,6 +52,9 @@ struct HomeView: View {
                 
             }
         }
+        .onAppear {
+            CGFloat.chunkViewTopEdge = topEdge > 20.0 ? 140.0 : 110.0
+        }
         
     }
 }
@@ -61,23 +62,5 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(topEdge: 0.0)
-    }
-}
-
-// MARK: functions
-extension HomeView {
-    private func getTitleOffset() -> CGFloat {
-        if offset < 0.0 {
-            let progress = offset / 120.0 * currentWeatherViewOffsetThreshold
-            let newOffset = progress < -currentWeatherViewOffsetThreshold ? -currentWeatherViewOffsetThreshold : progress
-//            print("progress: \(progress), newOffset: \(newOffset)")
-            return newOffset
-        }
-        return 0.0
-    }
-    
-    private func getTitleOpacity() -> CGFloat {
-        let progress = -getTitleOffset() / currentWeatherViewOffsetThreshold
-        return 1.0 - progress
     }
 }

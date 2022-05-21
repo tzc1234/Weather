@@ -47,22 +47,22 @@ struct ChunkView<Title: View, Content: View>: View {
             .background(.ultraThinMaterial)
             .clipShape(Corners(corners: [.bottomLeft, .bottomRight], radius: 12.0))
             // Keep move the content part. Offset the offset below.
-            .offset(y: offsetTop >= 120.0 ? 0.0 : -(120.0 - offsetTop))
+            .offset(y: offsetTop >= .chunkViewTopEdge ? 0.0 : -(.chunkViewTopEdge - offsetTop))
             .clipped()
             .opacity(getOpacity())
             
         }
         .preferredColorScheme(.dark)
-        // Make the whole ChunkView stick to 120
-        .offset(y: offsetTop >= 120.0 ? 0.0 : 120.0 - offsetTop)
+        // Make the whole ChunkView stick to topEdge
+        .offset(y: offsetTop >= .chunkViewTopEdge ? 0.0 : .chunkViewTopEdge - offsetTop)
         .opacity(getOpacity())
         .background(
             GeometryReader { proxy -> Color in
-                let globalFrame = proxy.frame(in: .global)
+                let frame = proxy.frame(in: .global)
                 
                 DispatchQueue.main.async {
-                    offsetTop = globalFrame.minY
-                    offsetBottom = globalFrame.maxY - 120.0
+                    offsetTop = frame.minY
+                    offsetBottom = frame.maxY - .chunkViewTopEdge
                     
                     let threshold = titleViewHeight + 12.0 - 3.3
                     if offsetBottom < threshold {
