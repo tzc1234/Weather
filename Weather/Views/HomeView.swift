@@ -32,12 +32,33 @@ struct HomeView: View {
                         .offset(y: -offset)
                         .offset(y: offset > 0 ? offset / .screenWidth * 100 : 0) // drag down effect.
                     
-                    HourlyForecastView()
-                        .padding(.bottom, 20.0)
-                    
-                    Color.clear
-                        .border(.black, width: 1.0)
-                        .frame(height: 1400.0)
+                    VStack(spacing: 10.0) {
+                        HourlyForecastView()
+                        
+                        AirQualityView()
+                        
+                        HStack(spacing: 10.0) {
+                            UVIndexView()
+                            SunsetView()
+                        }
+                        
+                        HStack(spacing: 10.0) {
+                            FeelsLikeView()
+                            HumidityView()
+                        }
+                        
+                        HStack(spacing: 10.0) {
+                            VisibilityView()
+                            PressureView()
+                        }
+                        
+                        HStack(spacing: 10.0) {
+                            WindView()
+                            Spacer()
+                                .frame(maxWidth: .infinity)
+                        }
+                        
+                    }
                 }
                 .padding(.top, topConstant + topEdge)
                 .padding([.horizontal, .bottom])

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CurrentWeatherView: View {
+    
     @State private var locationTextHeight: CGFloat = 0.0
     @State private var tempTextHeight: CGFloat = 0.0
     @State private var bottomSubviewHeight: CGFloat = 0.0
-    @State private var height: CGFloat = 0.0
     
     @State private var chunkViewOffsetY: CGFloat = 0.0
     
@@ -38,7 +38,7 @@ struct CurrentWeatherView: View {
             
             ZStack {
                 Text(" 16°")
-                    .font(.system(size: 60).leading(.tight))
+                    .font(.system(size: 70))
                     .fontWeight(.thin)
                     .foregroundStyle(.white)
                     .opacity(getTempTextOpacity())
@@ -68,13 +68,10 @@ struct CurrentWeatherView: View {
         .background(
             GeometryReader { proxy -> Color in
                 DispatchQueue.main.async {
-                    height = proxy.frame(in: .global).height
-                    
-                    print("offsetY: \(-offsetY)")
-                    
+//                    print("offsetY: \(-offsetY)")
                     let partialTempTextHeight = tempTextHeight - (.chunkViewTopEdge - topEdge - locationTextHeight)
                     chunkViewOffsetY = partialTempTextHeight + bottomSubviewHeight + bottomPadding
-                    print("chunkViewOffsetY: \(chunkViewOffsetY)")
+//                    print("chunkViewOffsetY: \(chunkViewOffsetY)")
                 }
                 
                 return .clear

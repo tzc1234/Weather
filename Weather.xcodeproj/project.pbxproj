@@ -18,6 +18,14 @@
 		BE1A71B3282ADD3300CA453C /* CGFloat+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A71B2282ADD3300CA453C /* CGFloat+Additions.swift */; };
 		BE3B7D5E2838EEF000671CC1 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B7D5D2838EEF000671CC1 /* Global.swift */; };
 		BEA4866C282BC88600C7EBD3 /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */; };
+		BEAC69AE28394FBC00990938 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69AD28394FBC00990938 /* AirQualityView.swift */; };
+		BEAC69B02839589300990938 /* UVIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69AF2839589300990938 /* UVIndexView.swift */; };
+		BEAC69B228395B0A00990938 /* SunsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69B128395B0A00990938 /* SunsetView.swift */; };
+		BEAC69B42839608100990938 /* FeelsLikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69B32839608100990938 /* FeelsLikeView.swift */; };
+		BEAC69B6283964EF00990938 /* HumidityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69B5283964EF00990938 /* HumidityView.swift */; };
+		BEAC69B8283965DE00990938 /* VisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69B7283965DE00990938 /* VisibilityView.swift */; };
+		BEAC69BA283966D700990938 /* PressureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69B9283966D700990938 /* PressureView.swift */; };
+		BEAC69BC28396D2400990938 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69BB28396D2400990938 /* WindView.swift */; };
 		BEB2053528380507005AC286 /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB2053428380507005AC286 /* FramePreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +42,14 @@
 		BE1A71B2282ADD3300CA453C /* CGFloat+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Additions.swift"; sourceTree = "<group>"; };
 		BE3B7D5D2838EEF000671CC1 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
+		BEAC69AD28394FBC00990938 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
+		BEAC69AF2839589300990938 /* UVIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexView.swift; sourceTree = "<group>"; };
+		BEAC69B128395B0A00990938 /* SunsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetView.swift; sourceTree = "<group>"; };
+		BEAC69B32839608100990938 /* FeelsLikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelsLikeView.swift; sourceTree = "<group>"; };
+		BEAC69B5283964EF00990938 /* HumidityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityView.swift; sourceTree = "<group>"; };
+		BEAC69B7283965DE00990938 /* VisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityView.swift; sourceTree = "<group>"; };
+		BEAC69B9283966D700990938 /* PressureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressureView.swift; sourceTree = "<group>"; };
+		BEAC69BB28396D2400990938 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		BEB2053428380507005AC286 /* FramePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramePreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +110,14 @@
 				BE1A7196282A677000CA453C /* HomeView.swift */,
 				BE1A71A3282A6EF000CA453C /* CurrentWeatherView.swift */,
 				BE1A71A5282A9E6B00CA453C /* ChunkView.swift */,
+				BEAC69AD28394FBC00990938 /* AirQualityView.swift */,
+				BEAC69AF2839589300990938 /* UVIndexView.swift */,
+				BEAC69B128395B0A00990938 /* SunsetView.swift */,
+				BEAC69B32839608100990938 /* FeelsLikeView.swift */,
+				BEAC69B5283964EF00990938 /* HumidityView.swift */,
+				BEAC69B7283965DE00990938 /* VisibilityView.swift */,
+				BEAC69B9283966D700990938 /* PressureView.swift */,
+				BEAC69BB28396D2400990938 /* WindView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,13 +227,21 @@
 			files = (
 				BEA4866C282BC88600C7EBD3 /* HourlyForecastView.swift in Sources */,
 				BE1A71A4282A6EF000CA453C /* CurrentWeatherView.swift in Sources */,
+				BEAC69B8283965DE00990938 /* VisibilityView.swift in Sources */,
 				BEB2053528380507005AC286 /* FramePreferenceKey.swift in Sources */,
 				BE1A71A9282AA00B00CA453C /* Corners.swift in Sources */,
 				BE1A71B3282ADD3300CA453C /* CGFloat+Additions.swift in Sources */,
 				BE1A71AD282AB5DA00CA453C /* ForecastColumnView.swift in Sources */,
 				BE1A7197282A677000CA453C /* HomeView.swift in Sources */,
+				BEAC69AE28394FBC00990938 /* AirQualityView.swift in Sources */,
 				BE3B7D5E2838EEF000671CC1 /* Global.swift in Sources */,
+				BEAC69B42839608100990938 /* FeelsLikeView.swift in Sources */,
 				BE1A71A6282A9E6B00CA453C /* ChunkView.swift in Sources */,
+				BEAC69BC28396D2400990938 /* WindView.swift in Sources */,
+				BEAC69B02839589300990938 /* UVIndexView.swift in Sources */,
+				BEAC69BA283966D700990938 /* PressureView.swift in Sources */,
+				BEAC69B6283964EF00990938 /* HumidityView.swift in Sources */,
+				BEAC69B228395B0A00990938 /* SunsetView.swift in Sources */,
 				BE1A7195282A677000CA453C /* WeatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

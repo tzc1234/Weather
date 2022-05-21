@@ -45,7 +45,7 @@ struct HourlyForecastView_Previews: PreviewProvider {
 extension HourlyForecastView {
     private var hourlyForecastLabel: some View {
         Label {
-            Text("HOURLY FORECAST")
+            Text("hourly forecast".uppercased())
         } icon: {
             Image(systemName: "clock")
         }
