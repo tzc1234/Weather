@@ -34,7 +34,6 @@ struct HomeView: View {
                     
                     VStack(spacing: 10.0) {
                         HourlyForecastView()
-                        
                         AirQualityView()
                         
                         HStack(spacing: 10.0) {
@@ -57,20 +56,18 @@ struct HomeView: View {
                             Spacer()
                                 .frame(maxWidth: .infinity)
                         }
-                        
                     }
                 }
                 .padding(.top, topConstant + topEdge)
                 .padding([.horizontal, .bottom])
-                .overlay(
+                .background(
                     GeometryReader { proxy -> Color in
                         DispatchQueue.main.async {
                             offset = proxy.frame(in: .global).minY
                         }
-                        return Color.clear
+                        return .clear
                     }
                 )
-                
             }
         }
         .onAppear {

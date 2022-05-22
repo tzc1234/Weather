@@ -19,10 +19,8 @@ struct AirQualityView: View {
                 
                 Text("Air quality is satisfactory, and air pollution poses little or no risk.")
                     .font(.caption)
-                    .fontWeight(.semibold)
             }
             .foregroundColor(.white)
-            
         }
     }
 }

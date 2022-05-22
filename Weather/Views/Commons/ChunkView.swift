@@ -49,14 +49,14 @@ struct ChunkView<Title: View, Content: View>: View {
             }
             .background(.ultraThinMaterial)
             .clipShape(Corners(corners: [.bottomLeft, .bottomRight], radius: 12.0))
-            // Keep move the content part. Offset the offset below.
+            // Keep move the content part. Offset the offset affect on the outer VStack.
             .offset(y: offsetTop >= .chunkViewTopEdge ? 0.0 : -(.chunkViewTopEdge - offsetTop))
             .clipped()
             .opacity(getOpacity())
             
         }
         .preferredColorScheme(.dark)
-        // Make the whole ChunkView stick to topEdge
+        // Make the whole ChunkView stick to chunkViewTopEdge.
         .offset(y: offsetTop >= .chunkViewTopEdge ? 0.0 : .chunkViewTopEdge - offsetTop)
         .opacity(getOpacity())
         .background(
@@ -79,10 +79,9 @@ struct ChunkView<Title: View, Content: View>: View {
                     }
                 }
                 
-                return Color.clear
+                return .clear
             }
         )
-        
         
     }
 }
@@ -100,6 +99,6 @@ extension ChunkView {
             let progress = offsetBottom / titleViewHeight
             return progress
         }
-        return 1
+        return 1.0
     }
 }

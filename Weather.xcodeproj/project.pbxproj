@@ -26,7 +26,7 @@
 		BEAC69B8283965DE00990938 /* VisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69B7283965DE00990938 /* VisibilityView.swift */; };
 		BEAC69BA283966D700990938 /* PressureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69B9283966D700990938 /* PressureView.swift */; };
 		BEAC69BC28396D2400990938 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69BB28396D2400990938 /* WindView.swift */; };
-		BEB2053528380507005AC286 /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB2053428380507005AC286 /* FramePreferenceKey.swift */; };
+		BEB2053528380507005AC286 /* HeightPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB2053428380507005AC286 /* HeightPreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,7 @@
 		BEAC69B7283965DE00990938 /* VisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityView.swift; sourceTree = "<group>"; };
 		BEAC69B9283966D700990938 /* PressureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressureView.swift; sourceTree = "<group>"; };
 		BEAC69BB28396D2400990938 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
-		BEB2053428380507005AC286 /* FramePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramePreferenceKey.swift; sourceTree = "<group>"; };
+		BEB2053428380507005AC286 /* HeightPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightPreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +104,12 @@
 		BE1A71A2282A6ED100CA453C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BEAC69BD283970A500990938 /* Commons */,
 				BEB20533283804EF005AC286 /* PreferenceKeys */,
 				BE1A71A7282A9FE400CA453C /* Shapes */,
 				BEA4866A282BC83D00C7EBD3 /* ForecastViews */,
 				BE1A7196282A677000CA453C /* HomeView.swift */,
 				BE1A71A3282A6EF000CA453C /* CurrentWeatherView.swift */,
-				BE1A71A5282A9E6B00CA453C /* ChunkView.swift */,
 				BEAC69AD28394FBC00990938 /* AirQualityView.swift */,
 				BEAC69AF2839589300990938 /* UVIndexView.swift */,
 				BEAC69B128395B0A00990938 /* SunsetView.swift */,
@@ -147,10 +147,18 @@
 			path = ForecastViews;
 			sourceTree = "<group>";
 		};
+		BEAC69BD283970A500990938 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				BE1A71A5282A9E6B00CA453C /* ChunkView.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		BEB20533283804EF005AC286 /* PreferenceKeys */ = {
 			isa = PBXGroup;
 			children = (
-				BEB2053428380507005AC286 /* FramePreferenceKey.swift */,
+				BEB2053428380507005AC286 /* HeightPreferenceKey.swift */,
 			);
 			path = PreferenceKeys;
 			sourceTree = "<group>";
@@ -228,7 +236,7 @@
 				BEA4866C282BC88600C7EBD3 /* HourlyForecastView.swift in Sources */,
 				BE1A71A4282A6EF000CA453C /* CurrentWeatherView.swift in Sources */,
 				BEAC69B8283965DE00990938 /* VisibilityView.swift in Sources */,
-				BEB2053528380507005AC286 /* FramePreferenceKey.swift in Sources */,
+				BEB2053528380507005AC286 /* HeightPreferenceKey.swift in Sources */,
 				BE1A71A9282AA00B00CA453C /* Corners.swift in Sources */,
 				BE1A71B3282ADD3300CA453C /* CGFloat+Additions.swift in Sources */,
 				BE1A71AD282AB5DA00CA453C /* ForecastColumnView.swift in Sources */,
