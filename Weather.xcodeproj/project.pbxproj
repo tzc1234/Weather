@@ -27,6 +27,11 @@
 		BEAC69BA283966D700990938 /* PressureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69B9283966D700990938 /* PressureView.swift */; };
 		BEAC69BC28396D2400990938 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69BB28396D2400990938 /* WindView.swift */; };
 		BEB2053528380507005AC286 /* HeightPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB2053428380507005AC286 /* HeightPreferenceKey.swift */; };
+		BED9C2A52842649000FDE8C2 /* currentConditions.json in Resources */ = {isa = PBXBuildFile; fileRef = BED9C2A42842649000FDE8C2 /* currentConditions.json */; };
+		BED9C2A8284265BD00FDE8C2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED9C2A7284265BD00FDE8C2 /* Models.swift */; };
+		BED9C2AA2842711200FDE8C2 /* RainFallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED9C2A92842711200FDE8C2 /* RainFallView.swift */; };
+		BED9C2AC2842745800FDE8C2 /* OptionalInt+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED9C2AB2842745800FDE8C2 /* OptionalInt+Additions.swift */; };
+		BED9C2AF284277C900FDE8C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED9C2AE284277C900FDE8C2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,11 @@
 		BEAC69B9283966D700990938 /* PressureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressureView.swift; sourceTree = "<group>"; };
 		BEAC69BB28396D2400990938 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		BEB2053428380507005AC286 /* HeightPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightPreferenceKey.swift; sourceTree = "<group>"; };
+		BED9C2A42842649000FDE8C2 /* currentConditions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currentConditions.json; sourceTree = "<group>"; };
+		BED9C2A7284265BD00FDE8C2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		BED9C2A92842711200FDE8C2 /* RainFallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainFallView.swift; sourceTree = "<group>"; };
+		BED9C2AB2842745800FDE8C2 /* OptionalInt+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalInt+Additions.swift"; sourceTree = "<group>"; };
+		BED9C2AE284277C900FDE8C2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +96,12 @@
 				BE1A7194282A677000CA453C /* WeatherApp.swift */,
 				BE3B7D5D2838EEF000671CC1 /* Global.swift */,
 				BE1A71A2282A6ED100CA453C /* Views */,
+				BED9C2AD2842756C00FDE8C2 /* Networkings */,
+				BED9C2A62842657500FDE8C2 /* Models */,
 				BE1A71B1282ADCCA00CA453C /* Extensions */,
+				BED9C2A32842646500FDE8C2 /* Resource */,
 				BE1A7198282A677800CA453C /* Assets.xcassets */,
+				BED9C2AE284277C900FDE8C2 /* LaunchScreen.storyboard */,
 				BE1A719A282A677800CA453C /* Preview Content */,
 			);
 			path = Weather;
@@ -107,9 +121,9 @@
 				BEAC69BD283970A500990938 /* Commons */,
 				BEB20533283804EF005AC286 /* PreferenceKeys */,
 				BE1A71A7282A9FE400CA453C /* Shapes */,
-				BEA4866A282BC83D00C7EBD3 /* ForecastViews */,
 				BE1A7196282A677000CA453C /* HomeView.swift */,
 				BE1A71A3282A6EF000CA453C /* CurrentWeatherView.swift */,
+				BEA4866A282BC83D00C7EBD3 /* HourlyForecastViews */,
 				BEAC69AD28394FBC00990938 /* AirQualityView.swift */,
 				BEAC69AF2839589300990938 /* UVIndexView.swift */,
 				BEAC69B128395B0A00990938 /* SunsetView.swift */,
@@ -118,6 +132,7 @@
 				BEAC69B7283965DE00990938 /* VisibilityView.swift */,
 				BEAC69B9283966D700990938 /* PressureView.swift */,
 				BEAC69BB28396D2400990938 /* WindView.swift */,
+				BED9C2A92842711200FDE8C2 /* RainFallView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,17 +149,18 @@
 			isa = PBXGroup;
 			children = (
 				BE1A71B2282ADD3300CA453C /* CGFloat+Additions.swift */,
+				BED9C2AB2842745800FDE8C2 /* OptionalInt+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BEA4866A282BC83D00C7EBD3 /* ForecastViews */ = {
+		BEA4866A282BC83D00C7EBD3 /* HourlyForecastViews */ = {
 			isa = PBXGroup;
 			children = (
 				BE1A71AC282AB5DA00CA453C /* ForecastColumnView.swift */,
 				BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */,
 			);
-			path = ForecastViews;
+			path = HourlyForecastViews;
 			sourceTree = "<group>";
 		};
 		BEAC69BD283970A500990938 /* Commons */ = {
@@ -161,6 +177,29 @@
 				BEB2053428380507005AC286 /* HeightPreferenceKey.swift */,
 			);
 			path = PreferenceKeys;
+			sourceTree = "<group>";
+		};
+		BED9C2A32842646500FDE8C2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BED9C2A42842649000FDE8C2 /* currentConditions.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BED9C2A62842657500FDE8C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BED9C2A7284265BD00FDE8C2 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BED9C2AD2842756C00FDE8C2 /* Networkings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networkings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE1A719C282A677800CA453C /* Preview Assets.xcassets in Resources */,
+				BED9C2AF284277C900FDE8C2 /* LaunchScreen.storyboard in Resources */,
 				BE1A7199282A677800CA453C /* Assets.xcassets in Resources */,
+				BED9C2A52842649000FDE8C2 /* currentConditions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,15 +280,18 @@
 				BEB2053528380507005AC286 /* HeightPreferenceKey.swift in Sources */,
 				BE1A71A9282AA00B00CA453C /* Corners.swift in Sources */,
 				BE1A71B3282ADD3300CA453C /* CGFloat+Additions.swift in Sources */,
+				BED9C2AA2842711200FDE8C2 /* RainFallView.swift in Sources */,
 				BE1A71AD282AB5DA00CA453C /* ForecastColumnView.swift in Sources */,
 				BE1A7197282A677000CA453C /* HomeView.swift in Sources */,
 				BEAC69AE28394FBC00990938 /* AirQualityView.swift in Sources */,
 				BE3B7D5E2838EEF000671CC1 /* Global.swift in Sources */,
 				BEAC69B42839608100990938 /* FeelsLikeView.swift in Sources */,
+				BED9C2AC2842745800FDE8C2 /* OptionalInt+Additions.swift in Sources */,
 				BE1A71A6282A9E6B00CA453C /* ChunkView.swift in Sources */,
 				BEAC69BC28396D2400990938 /* WindView.swift in Sources */,
 				BEAC69B02839589300990938 /* UVIndexView.swift in Sources */,
 				BEAC69BA283966D700990938 /* PressureView.swift in Sources */,
+				BED9C2A8284265BD00FDE8C2 /* Models.swift in Sources */,
 				BEAC69B6283964EF00990938 /* HumidityView.swift in Sources */,
 				BEAC69B228395B0A00990938 /* SunsetView.swift in Sources */,
 				BE1A7195282A677000CA453C /* WeatherApp.swift in Sources */,
@@ -384,7 +428,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -415,7 +459,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

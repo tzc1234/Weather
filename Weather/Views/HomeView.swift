@@ -34,11 +34,11 @@ struct HomeView: View {
                     
                     VStack(spacing: 10.0) {
                         HourlyForecastView()
-                        AirQualityView()
+//                        AirQualityView()
                         
                         HStack(spacing: 10.0) {
                             UVIndexView()
-                            SunsetView()
+                            RainFallView()
                         }
                         
                         HStack(spacing: 10.0) {

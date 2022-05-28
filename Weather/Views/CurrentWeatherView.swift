@@ -105,7 +105,7 @@ extension CurrentWeatherView {
     private var bottomSubview: some View {
         VStack(spacing: 0.0) {
             Text("Haze")
-            Text("H:20° L:12°")
+            Text("H:-° L:-°")
         }
         .font(.callout)
         .foregroundStyle(.white)
