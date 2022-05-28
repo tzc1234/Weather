@@ -18,6 +18,7 @@ struct CurrentWeatherView: View {
     
     let topEdge: CGFloat
     let offsetY: CGFloat
+    let currentCondition: CurrentCondition?
     
     var body: some View {
         VStack(spacing: 0.0) {
@@ -51,7 +52,7 @@ struct CurrentWeatherView: View {
 
 struct CurrentWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentWeatherView(topEdge: 25.0, offsetY: 0.0)
+        CurrentWeatherView(topEdge: 25.0, offsetY: 0.0, currentCondition: nil)
             .background(.black)
     }
 }
@@ -75,7 +76,7 @@ extension CurrentWeatherView {
     }
     
     private var tempText: some View {
-        Text(" 16°")
+        Text(" " + (currentCondition?.tempDouble).tempStr)
             .font(.system(size: 70))
             .fontWeight(.thin)
             .foregroundStyle(.white)
@@ -93,7 +94,7 @@ extension CurrentWeatherView {
     }
 
     private var shortTempText: some View {
-        Text("16° | Haze")
+        Text((currentCondition?.shortTempStr).nilStr)
             .font(.callout)
             .foregroundStyle(.white)
             .frame(maxHeight: .infinity, alignment: .top)
@@ -104,7 +105,7 @@ extension CurrentWeatherView {
     
     private var bottomSubview: some View {
         VStack(spacing: 0.0) {
-            Text("Haze")
+            Text((currentCondition?.weatherText).nilStr)
             Text("H:-° L:-°")
         }
         .font(.callout)
