@@ -55,70 +55,108 @@ enum WeatherIcon: Int, Codable {
         switch self {
         case .sunny, .mostlySunny, .partlySunny, .intermittentClouds:
             Image(systemName: "sun.max.fill")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.yellow)
         case .hazySunshine:
             Image(systemName: "sun.haze.fill")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .yellow)
         case .mostlyCloudy, .mostlyCloudyNight:
             Image(systemName: "cloud.sun.fill")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .yellow)
         case .cloudy, .dreary:
             Image(systemName: "cloud.fill")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.white)
         case .fog:
             Image(systemName: "cloud.fog.fill")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.white)
         case .showers, .mostlyCloudyWShowers:
             Image(systemName: "cloud.drizzle.fill")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .cyan)
         case .partlySunnyWShowers:
             Image(systemName: "cloud.sun.rain.fill")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .yellow, .cyan)
         case .tStorms, .mostlyCloudyWTStorms:
             Image(systemName: "cloud.bolt.fill")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.white)
         case .partlySunnyWTStorms:
             Image(systemName: "cloud.sun.bolt.fill")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .yellow)
         case .rain, .freezingRain:
             Image(systemName: "cloud.rain.fill")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .cyan)
         case .flurries, .mostlyCloudyWFlurries, .partlySunnyWFlurries, .windy, .mostlyCloudyWFlurriesNight:
             Image(systemName: "wind")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.white)
         case .snow, .mostlyCloudyWSnow, .mostlyCloudyWSnowNight:
             Image(systemName: "snowflake")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.white)
         case .sleet, .rainAndSnow:
             Image(systemName: "cloud.sleet.fill")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .cyan)
         case .hot:
             Image(systemName: "thermometer.sun.fill")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .yellow)
         case .cold, .ice:
             Image(systemName: "thermometer.snowflake")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .cyan)
         case .clear, .mostlyClear:
             Image(systemName: "moon.stars.fill")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.white)
         case .partlyCloudyNight, .intermittentCloudsNight, .hazyMoonlight:
             Image(systemName: "cloud.moon.fill")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.white)
         case .partlyCloudyWShowersNight, .mostlyCloudyWShowersNight:
             Image(systemName: "cloud.moon.rain.fill")
+                .resizable()
+                .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .white, .cyan)
         case .partlyCloudyWTStormsNight, .mostlyCloudyWTStormsNight:
             Image(systemName: "cloud.moon.bolt.fill")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.white)
         }
     }
