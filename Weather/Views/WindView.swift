@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct WindView: View {
+    let currentCondition: CurrentCondition?
+    
     var body: some View {
         ChunkView {
             Label("wind".uppercased(), systemImage: "wind")
         } content: {
             VStack(alignment: .leading, spacing: 8.0) {
-                Text("6.4 m/s")
+                Text((currentCondition?.windStr).nilStr)
                     .font(.title2)
             }
             .foregroundColor(.white)
@@ -24,6 +26,6 @@ struct WindView: View {
 
 struct WindView_Previews: PreviewProvider {
     static var previews: some View {
-        WindView()
+        WindView(currentCondition: nil)
     }
 }

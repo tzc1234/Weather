@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct FeelsLikeView: View {
+    let currentCondition: CurrentCondition?
+    
     var body: some View {
         ChunkView {
             Label("feels like".uppercased(), systemImage: "thermometer")
         } content: {
             VStack(alignment: .leading, spacing: 8.0) {
-                Text("18°")
+                Text((currentCondition?.feelsLike).nilStr)
                     .font(.title2)
             }
             .foregroundColor(.white)
@@ -24,6 +26,6 @@ struct FeelsLikeView: View {
 
 struct FeelsLikeView_Previews: PreviewProvider {
     static var previews: some View {
-        FeelsLikeView()
+        FeelsLikeView(currentCondition: nil)
     }
 }

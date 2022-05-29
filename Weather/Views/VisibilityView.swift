@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct VisibilityView: View {
+    let currentCondition: CurrentCondition?
+    
     var body: some View {
         ChunkView {
             Label("visibility".uppercased(), systemImage: "eye.fill")
         } content: {
             VStack(alignment: .leading, spacing: 8.0) {
-                Text("10 KM")
+                Text((currentCondition?.visibilityStr).nilStr)
                     .font(.title2)
             }
             .foregroundColor(.white)
@@ -24,6 +26,6 @@ struct VisibilityView: View {
 
 struct VisibilityView_Previews: PreviewProvider {
     static var previews: some View {
-        VisibilityView()
+        VisibilityView(currentCondition: nil)
     }
 }

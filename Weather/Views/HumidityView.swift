@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct HumidityView: View {
+    let currentCondition: CurrentCondition?
+    
     var body: some View {
         ChunkView {
             Label("humidity".uppercased(), systemImage: "humidity")
         } content: {
             VStack(alignment: .leading, spacing: 8.0) {
-                Text("49%")
+                Text((currentCondition?.humidity).nilStr)
                     .font(.title2)
             }
             .foregroundColor(.white)
@@ -24,6 +26,6 @@ struct HumidityView: View {
 
 struct HumidityView_Previews: PreviewProvider {
     static var previews: some View {
-        HumidityView()
+        HumidityView(currentCondition: nil)
     }
 }

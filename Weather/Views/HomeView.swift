@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var vm = HomeViewModel(networkManager: WeatherNetworkManager.shared)
+    @StateObject private var vm = HomeViewModel(networkManager: MockNetworkManager.shared)
     @State private var offset: CGFloat = 0.0
     
     private let topConstant: CGFloat = 25.0
@@ -38,22 +38,22 @@ struct HomeView: View {
 //                        AirQualityView()
                         
                         HStack(spacing: 10.0) {
-                            UVIndexView()
-                            RainFallView()
+                            UVIndexView(currentCondition: vm.currentCondition)
+                            RainFallView(currentCondition: vm.currentCondition)
                         }
                         
                         HStack(spacing: 10.0) {
-                            FeelsLikeView()
-                            HumidityView()
+                            FeelsLikeView(currentCondition: vm.currentCondition)
+                            HumidityView(currentCondition: vm.currentCondition)
                         }
                         
                         HStack(spacing: 10.0) {
-                            VisibilityView()
-                            PressureView()
+                            VisibilityView(currentCondition: vm.currentCondition)
+                            PressureView(currentCondition: vm.currentCondition)
                         }
                         
                         HStack(spacing: 10.0) {
-                            WindView()
+                            WindView(currentCondition: vm.currentCondition)
                             Spacer()
                                 .frame(maxWidth: .infinity)
                         }

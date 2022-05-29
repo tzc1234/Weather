@@ -12,7 +12,15 @@ extension Optional where Wrapped == Double {
         if let self = self {
             return "\(Int(self))°"
         } else {
-            return "-"
+            return .nilSign
+        }
+    }
+    
+    var nilStr: String {
+        if let self = self {
+            return String(self)
+        } else {
+            return .nilSign
         }
     }
 }

@@ -38,6 +38,7 @@ struct CurrentCondition: Codable {
     }
 }
 
+// MARK: computed variables
 extension CurrentCondition {
     var tempDouble: Double? {
         temperature.metric.value
@@ -46,6 +47,44 @@ extension CurrentCondition {
     var shortTempStr: String {
         let tempStr = tempDouble.tempStr
         return "\(tempStr) | \(weatherText)"
+    }
+    
+    var rainfall24h: String {
+        let val = precipitationSummary.past24Hours.metric.value.nilStr
+        let unit = precipitationSummary.past24Hours.metric.unit
+        return "\(val) \(unit)"
+    }
+    
+    var feelsLike: String {
+        realFeelTemperature.metric.value.tempStr
+    }
+    
+    var humidity: String? {
+        guard let humidity = relativeHumidity else {
+            return nil
+        }
+        return "\(humidity)%"
+    }
+    
+    var visibilityStr: String {
+        guard let val = visibility.metric.value else {
+            return .nilSign
+        }
+        return "\(val) \(visibility.metric.unit)"
+    }
+    
+    var pressureStr: String {
+        guard let val = pressure.metric.value else {
+            return .nilSign
+        }
+        return "\(val) \(pressure.metric.unit)"
+    }
+    
+    var windStr: String {
+        guard let val = wind.speed.metric.value else {
+            return .nilSign
+        }
+        return "\(val) \(wind.speed.metric.unit)"
     }
 }
 

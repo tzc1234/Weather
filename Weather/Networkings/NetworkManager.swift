@@ -11,8 +11,8 @@ protocol NetworkManager {
     func fetchCurrentConditions() async throws -> [CurrentCondition]
 }
 
-final class WeatherNetworkManager: NetworkManager {
-    static let shared = WeatherNetworkManager()
+final class MockNetworkManager: NetworkManager {
+    static let shared = MockNetworkManager()
     private init() {}
     
     func fetchCurrentConditions() async throws -> [CurrentCondition] {
