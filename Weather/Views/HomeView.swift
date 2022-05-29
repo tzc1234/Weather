@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var vm = HomeViewModel(networkManager: MockNetworkManager.shared)
+    @StateObject private var vm = HomeViewModel(networkManager: MockNetworkManager())
     @State private var offset: CGFloat = 0.0
     
     private let topConstant: CGFloat = 25.0
@@ -29,7 +29,12 @@ struct HomeView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0.0) {
-                    CurrentWeatherView(topEdge: topConstant + topEdge, offsetY: offset, currentCondition: vm.currentCondition)
+                    CurrentWeatherView(
+                        topEdge: topConstant + topEdge,
+                        offsetY: offset,
+                        geoPosition: vm.geoPosition,
+                        currentCondition: vm.currentCondition
+                    )
                         .offset(y: -offset)
                         .offset(y: offset > 0 ? offset / .screenWidth * 100 : 0) // drag down effect.
                     
@@ -75,7 +80,7 @@ struct HomeView: View {
             CGFloat.chunkViewTopEdge = topEdge > 20.0 ? 140.0 : 110.0
         }
         .task {
-            await vm.fetchCurrentConditions()
+            await vm.fetchWeathData()
         }
         
     }

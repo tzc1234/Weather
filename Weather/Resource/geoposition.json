@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "Key": "2532627",
+  "Type": "City",
+  "Rank": 55,
+  "LocalizedName": "Abbey Wood",
+  "EnglishName": "Abbey Wood",
+  "PrimaryPostalCode": "SE2 9",
+  "Region": {
+    "ID": "EUR",
+    "LocalizedName": "Europe",
+    "EnglishName": "Europe"
+  },
+  "Country": {
+    "ID": "GB",
+    "LocalizedName": "United Kingdom",
+    "EnglishName": "United Kingdom"
+  },
+  "AdministrativeArea": {
+    "ID": "BEX",
+    "LocalizedName": "Bexley",
+    "EnglishName": "Bexley",
+    "Level": 1,
+    "LocalizedType": "London Borough",
+    "EnglishType": "London Borough",
+    "CountryID": "GB"
+  },
+  "TimeZone": {
+    "Code": "BST",
+    "Name": "Europe/London",
+    "GmtOffset": 1,
+    "IsDaylightSaving": true,
+    "NextOffsetChange": "2022-10-30T01:00:00Z"
+  },
+  "GeoPosition": {
+    "Latitude": 51.492,
+    "Longitude": 0.122,
+    "Elevation": {
+      "Metric": {
+        "Value": 16,
+        "Unit": "m",
+        "UnitType": 5
+      },
+      "Imperial": {
+        "Value": 52,
+        "Unit": "ft",
+        "UnitType": 0
+      }
+    }
+  },
+  "IsAlias": false,
+  "ParentCity": {
+    "Key": "328328",
+    "LocalizedName": "London",
+    "EnglishName": "London"
+  },
+  "SupplementalAdminAreas": [
+    {
+      "Level": 0,
+      "LocalizedName": "England",
+      "EnglishName": "England"
+    },
+    {
+      "Level": 3,
+      "LocalizedName": "Lesnes Abbey",
+      "EnglishName": "Lesnes Abbey"
+    }
+  ],
+  "DataSets": [
+    "AirQualityCurrentConditions",
+    "AirQualityForecasts",
+    "Alerts",
+    "DailyPollenForecast",
+    "ForecastConfidence",
+    "FutureRadar",
+    "MinuteCast",
+    "Radar"
+  ]
+}

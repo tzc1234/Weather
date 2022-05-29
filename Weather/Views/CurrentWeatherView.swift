@@ -18,6 +18,7 @@ struct CurrentWeatherView: View {
     
     let topEdge: CGFloat
     let offsetY: CGFloat
+    let geoPosition: GeoPosition?
     let currentCondition: CurrentCondition?
     
     var body: some View {
@@ -52,7 +53,7 @@ struct CurrentWeatherView: View {
 
 struct CurrentWeatherView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentWeatherView(topEdge: 25.0, offsetY: 0.0, currentCondition: nil)
+        CurrentWeatherView(topEdge: 25.0, offsetY: 0.0, geoPosition: nil, currentCondition: nil)
             .background(.black)
     }
 }
@@ -60,7 +61,7 @@ struct CurrentWeatherView_Previews: PreviewProvider {
 // MARK: components
 extension CurrentWeatherView {
     private var locationText: some View {
-        Text("London")
+        Text((geoPosition?.englishName).nilStr)
             .font(.system(size: 28))
             .foregroundStyle(.white)
             .background(
@@ -106,7 +107,7 @@ extension CurrentWeatherView {
     private var bottomSubview: some View {
         VStack(spacing: 0.0) {
             Text((currentCondition?.weatherText).nilStr)
-            Text("H:-° L:-°")
+            Text("H:-° L:-°") // TODO: Set highest lowest temp.
         }
         .font(.callout)
         .foregroundStyle(.white)

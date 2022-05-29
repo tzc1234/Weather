@@ -1,5 +1,5 @@
 //
-//  Models.swift
+//  CurrentCondition.swift
 //  Weather
 //
 //  Created by Tsz-Lung on 28/05/2022.

@@ -7,25 +7,33 @@
 
 import Foundation
 
+typealias WeatherData = (GeoPosition, [CurrentCondition])
+
 protocol NetworkManager {
-    func fetchCurrentConditions() async throws -> [CurrentCondition]
+    func fetchWeatherData() async throws -> WeatherData
 }
 
 final class MockNetworkManager: NetworkManager {
-    static let shared = MockNetworkManager()
-    private init() {}
-    
-    func fetchCurrentConditions() async throws -> [CurrentCondition] {
+    func fetchWeatherData() async throws -> WeatherData {
         guard
-            let url = Bundle.main.url(forResource: "currentConditions.json", withExtension: nil)
+            let geoUrl = Bundle.main.url(forResource: "geoposition", withExtension: "json")
         else {
             throw NetworkError.urlInvalid
         }
         
-        let (data, _) = try await URLSession.shared.data(from: url)
+        guard
+            let currentConditionUrl = Bundle.main.url(forResource: "currentConditions", withExtension: "json")
+        else {
+            throw NetworkError.urlInvalid
+        }
+        
+        let (geoData, _) = try await URLSession.shared.data(from: geoUrl)
+        let (currentConditionData, _) = try await URLSession.shared.data(from: currentConditionUrl)
         
         do {
-            return try JSONDecoder().decode([CurrentCondition].self, from: data)
+            let geoPosition = try JSONDecoder().decode(GeoPosition.self, from: geoData)
+            let currentConditions = try JSONDecoder().decode([CurrentCondition].self, from: currentConditionData)
+            return (geoPosition, currentConditions)
         } catch {
             throw NetworkError.dataDecodeFailure(error)
         }
