@@ -11,6 +11,7 @@ import Foundation
 final class HomeViewModel: ObservableObject {
     @Published private(set) var geoPosition: GeoPosition?
     @Published private(set) var currentConditions: [CurrentCondition] = []
+    @Published private(set) var hourlyForecasts: [HourlyForecast] = []
     
     let networkManager: NetworkManager
     
@@ -30,7 +31,7 @@ extension HomeViewModel {
 extension HomeViewModel {
     func fetchWeathData() async {
         do {
-            (geoPosition, currentConditions) = try await networkManager.fetchWeatherData()
+            (geoPosition, currentConditions, hourlyForecasts) = try await networkManager.fetchWeatherData()
         } catch {
             let errMsg = (error as? NetworkError)?.errorMsg ?? error.localizedDescription
             print(errMsg)

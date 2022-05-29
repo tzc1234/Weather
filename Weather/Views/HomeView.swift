@@ -39,7 +39,7 @@ struct HomeView: View {
                         .offset(y: offset > 0 ? offset / .screenWidth * 100 : 0) // drag down effect.
                     
                     VStack(spacing: 10.0) {
-                        HourlyForecastView()
+                        HourlyForecastView(hourlyForecasts: vm.hourlyForecasts)
 //                        AirQualityView()
                         
                         HStack(spacing: 10.0) {

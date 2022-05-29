@@ -9,11 +9,10 @@ import Foundation
 
 // MARK: - GeoPosition
 struct GeoPosition: Codable {
-    let key, localizedName, englishName: String
+    let key, englishName: String
 
     enum CodingKeys: String, CodingKey {
         case key = "Key"
-        case localizedName = "LocalizedName"
         case englishName = "EnglishName"
     }
 }

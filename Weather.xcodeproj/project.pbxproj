@@ -22,6 +22,9 @@
 		BEA4866C282BC88600C7EBD3 /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */; };
 		BEAB805728439EB100155126 /* geoposition.json in Resources */ = {isa = PBXBuildFile; fileRef = BEAB805628439EB100155126 /* geoposition.json */; };
 		BEAB80592843A09B00155126 /* GeoPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB80582843A09B00155126 /* GeoPosition.swift */; };
+		BEAB805B2843AE6300155126 /* hourlyForecasts.json in Resources */ = {isa = PBXBuildFile; fileRef = BEAB805A2843AE6300155126 /* hourlyForecasts.json */; };
+		BEAB805D2843AFEF00155126 /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB805C2843AFEF00155126 /* HourlyForecast.swift */; };
+		BEAB805F2843BE4200155126 /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB805E2843BE4200155126 /* WeatherIcon.swift */; };
 		BEAC69AE28394FBC00990938 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69AD28394FBC00990938 /* AirQualityView.swift */; };
 		BEAC69B02839589300990938 /* UVIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69AF2839589300990938 /* UVIndexView.swift */; };
 		BEAC69B228395B0A00990938 /* SunsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAC69B128395B0A00990938 /* SunsetView.swift */; };
@@ -61,6 +64,9 @@
 		BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
 		BEAB805628439EB100155126 /* geoposition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = geoposition.json; sourceTree = "<group>"; };
 		BEAB80582843A09B00155126 /* GeoPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPosition.swift; sourceTree = "<group>"; };
+		BEAB805A2843AE6300155126 /* hourlyForecasts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hourlyForecasts.json; sourceTree = "<group>"; };
+		BEAB805C2843AFEF00155126 /* HourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecast.swift; sourceTree = "<group>"; };
+		BEAB805E2843BE4200155126 /* WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
 		BEAC69AD28394FBC00990938 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
 		BEAC69AF2839589300990938 /* UVIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVIndexView.swift; sourceTree = "<group>"; };
 		BEAC69B128395B0A00990938 /* SunsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetView.swift; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 			children = (
 				BEAB805628439EB100155126 /* geoposition.json */,
 				BED9C2A42842649000FDE8C2 /* currentConditions.json */,
+				BEAB805A2843AE6300155126 /* hourlyForecasts.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -218,6 +225,8 @@
 			children = (
 				BED9C2A7284265BD00FDE8C2 /* CurrentCondition.swift */,
 				BEAB80582843A09B00155126 /* GeoPosition.swift */,
+				BEAB805C2843AFEF00155126 /* HourlyForecast.swift */,
+				BEAB805E2843BE4200155126 /* WeatherIcon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE1A719C282A677800CA453C /* Preview Assets.xcassets in Resources */,
+				BEAB805B2843AE6300155126 /* hourlyForecasts.json in Resources */,
 				BED9C2AF284277C900FDE8C2 /* LaunchScreen.storyboard in Resources */,
 				BEAB805728439EB100155126 /* geoposition.json in Resources */,
 				BE1A7199282A677800CA453C /* Assets.xcassets in Resources */,
@@ -330,6 +340,7 @@
 				BE1A7197282A677000CA453C /* HomeView.swift in Sources */,
 				BEAC69AE28394FBC00990938 /* AirQualityView.swift in Sources */,
 				BE3B7D5E2838EEF000671CC1 /* Global.swift in Sources */,
+				BEAB805D2843AFEF00155126 /* HourlyForecast.swift in Sources */,
 				BEAC69B42839608100990938 /* FeelsLikeView.swift in Sources */,
 				BED9C2AC2842745800FDE8C2 /* OptionalDouble+Additions.swift in Sources */,
 				BE1A71A6282A9E6B00CA453C /* ChunkView.swift in Sources */,
@@ -342,6 +353,7 @@
 				BED9C2B32842A9A500FDE8C2 /* EndPoint.swift in Sources */,
 				BED9C2BA2842B4FE00FDE8C2 /* NetworkError.swift in Sources */,
 				BEAC69B228395B0A00990938 /* SunsetView.swift in Sources */,
+				BEAB805F2843BE4200155126 /* WeatherIcon.swift in Sources */,
 				BE1A7195282A677000CA453C /* WeatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

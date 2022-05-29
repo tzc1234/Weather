@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ForecastColumnView: View {
-    
     let time: String
-    let imageName: String
-    let celsius: Double
+    let weatherIcon: WeatherIcon
+    let tempStr: String
     
     var body: some View {
         VStack(spacing: 16.0) {
@@ -19,12 +18,10 @@ struct ForecastColumnView: View {
                 .font(.callout)
                 .bold()
             
-            Image(systemName: imageName)
+            weatherIcon.image
                 .font(.title2)
-                .symbolRenderingMode(.palette)
-                .foregroundStyle(.white, .yellow)
             
-            Text("\(String(format: "%.0f", celsius))°")
+            Text(tempStr)
                 .font(.callout)
                 .bold()
         }
@@ -33,6 +30,6 @@ struct ForecastColumnView: View {
 
 struct ForecastColumnView_Previews: PreviewProvider {
     static var previews: some View {
-        ForecastColumnView(time: "Now", imageName: "cloud.sun.fill", celsius: 20.5)
+        ForecastColumnView(time: "Now", weatherIcon: .clear, tempStr: "20°")
     }
 }
