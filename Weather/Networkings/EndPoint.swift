@@ -45,9 +45,10 @@ enum WeatherEndPoint: EndPoint {
         }
     }
     
-    // Enter your AccuWeather api key.
     var apiKey: String {
-        ""
+        let apiKey = ""
+        assert(!apiKey.isEmpty, "Please set your AccuWeather apiKey inside WeatherEndPoint.")
+        return apiKey
     }
     
     var parameters: [URLQueryItem] {
