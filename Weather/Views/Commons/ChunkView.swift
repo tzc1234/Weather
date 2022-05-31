@@ -40,7 +40,6 @@ struct ChunkView<Title: View, Content: View>: View {
                 .zIndex(1.0)
             
             VStack(spacing: 0.0) {
-//                Divider()
                 content
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     .frame(minHeight: 90.0)

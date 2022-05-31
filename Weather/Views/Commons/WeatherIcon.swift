@@ -5,7 +5,6 @@
 //  Created by Tsz-Lung on 29/05/2022.
 //
 
-import Foundation
 import SwiftUI
 
 enum WeatherIcon: Int, Codable {
@@ -53,7 +52,7 @@ enum WeatherIcon: Int, Codable {
     @ViewBuilder
     var image: some View {
         switch self {
-        case .sunny, .mostlySunny, .partlySunny, .intermittentClouds:
+        case .sunny, .mostlySunny, .partlySunny:
             Image(systemName: "sun.max.fill")
                 .resizable()
                 .scaledToFit()
@@ -64,7 +63,7 @@ enum WeatherIcon: Int, Codable {
                 .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .yellow)
-        case .mostlyCloudy, .mostlyCloudyNight:
+        case .intermittentClouds, .mostlyCloudy:
             Image(systemName: "cloud.sun.fill")
                 .resizable()
                 .scaledToFit()
@@ -142,7 +141,7 @@ enum WeatherIcon: Int, Codable {
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(.white)
-        case .partlyCloudyNight, .intermittentCloudsNight, .hazyMoonlight:
+        case .partlyCloudyNight, .intermittentCloudsNight, .hazyMoonlight, .mostlyCloudyNight:
             Image(systemName: "cloud.moon.fill")
                 .resizable()
                 .scaledToFit()

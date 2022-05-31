@@ -8,15 +8,18 @@
 import Foundation
 
 enum NetworkError: Error {
-    case urlInvalid
+    case urlInvalid(String)
     case dataDecodeFailure(Error)
+    case invalidServerResponse
     
     var errorMsg: String {
         switch self {
-        case .urlInvalid:
-            return "Url Invalid."
+        case .urlInvalid(let urlStr):
+            return "Url: \(urlStr) Invalid."
         case .dataDecodeFailure(let error):
             return "\(error)"
+        case .invalidServerResponse:
+            return "Invalid Server Response."
         }
     }
 }

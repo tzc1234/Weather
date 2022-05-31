@@ -16,34 +16,54 @@ protocol EndPoint {
 }
 
 enum WeatherEndPoint: EndPoint {
-    case currentConditions
+    case geoposition(lat: Double, lon: Double)
+    case currentConditions(locationKey: String)
+    case hourlyForecasts(locationKey: String)
     
     var scheme: String {
         switch self {
         default:
-            return "https"
+            return "http"
         }
     }
     
     var baseURL: String {
         switch self {
-        case .currentConditions:
-            return "currentConditions.json"
+        default:
+            return "dataservice.accuweather.com"
         }
     }
     
     var path: String {
         switch self {
-        case .currentConditions:
-            return "currentconditions/v1"
+        case .geoposition:
+            return "/locations/v1/cities/geoposition/search"
+        case .currentConditions(let locationKey):
+            return "/currentconditions/v1/\(locationKey)"
+        case .hourlyForecasts(let locationKey):
+            return "/forecasts/v1/hourly/12hour/\(locationKey)"
         }
     }
     
+    // Enter your AccuWeather api key.
+    var apiKey: String {
+        ""
+    }
+    
     var parameters: [URLQueryItem] {
+        var params: [URLQueryItem]
+        
         switch self {
-        default:
-            return []
+        case .geoposition(let lat, let lon):
+            params = [URLQueryItem(name: "q", value: "\(lat),\(lon)")]
+        case .currentConditions:
+            params = [URLQueryItem(name: "details", value: "true")]
+        case .hourlyForecasts:
+            params = [URLQueryItem(name: "metric", value: "true")]
         }
+        
+        params.append(URLQueryItem(name: "apikey", value: apiKey))
+        return params
     }
     
     var method: String {

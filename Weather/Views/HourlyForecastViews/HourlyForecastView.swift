@@ -15,7 +15,7 @@ struct HourlyForecastView: View {
             hourlyForecastLabel
         } content: {
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 16.0) {
+                HStack(spacing: 24.0) {
                     ForEach(hourlyForecasts) { hourlyForecast in
                         ForecastColumnView(
                             time: hourlyForecast.hourStr,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var vm = HomeViewModel(networkManager: MockNetworkManager())
+    @StateObject private var vm = HomeViewModel(networkManager: WeatherNetworkManager())
     @State private var offset: CGFloat = 0.0
     
     private let topConstant: CGFloat = 25.0
@@ -35,8 +35,8 @@ struct HomeView: View {
                         geoPosition: vm.geoPosition,
                         currentCondition: vm.currentCondition
                     )
-                        .offset(y: -offset)
-                        .offset(y: offset > 0 ? offset / .screenWidth * 100 : 0) // drag down effect.
+                    .offset(y: -offset)
+                    .offset(y: offset > 0 ? offset / .screenWidth * 100 : 0) // drag down effect.
                     
                     VStack(spacing: 10.0) {
                         HourlyForecastView(hourlyForecasts: vm.hourlyForecasts)
@@ -78,9 +78,7 @@ struct HomeView: View {
         }
         .onAppear {
             CGFloat.chunkViewTopEdge = topEdge > 20.0 ? 140.0 : 110.0
-        }
-        .task {
-            await vm.fetchWeathData()
+            vm.checkIfLocationServiceEnabled()
         }
         
     }

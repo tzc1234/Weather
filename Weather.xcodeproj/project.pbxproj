@@ -19,6 +19,7 @@
 		BE3B7D5E2838EEF000671CC1 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B7D5D2838EEF000671CC1 /* Global.swift */; };
 		BE8CA040284384F600476737 /* OptionalInt+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8CA03F284384F600476737 /* OptionalInt+Additions.swift */; };
 		BE8CA04228439A3900476737 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8CA04128439A3900476737 /* String+Additions.swift */; };
+		BE9C99C62846151A0091138D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9C99C52846151A0091138D /* LocationManager.swift */; };
 		BEA4866C282BC88600C7EBD3 /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */; };
 		BEAB805728439EB100155126 /* geoposition.json in Resources */ = {isa = PBXBuildFile; fileRef = BEAB805628439EB100155126 /* geoposition.json */; };
 		BEAB80592843A09B00155126 /* GeoPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAB80582843A09B00155126 /* GeoPosition.swift */; };
@@ -61,6 +62,8 @@
 		BE3B7D5D2838EEF000671CC1 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		BE8CA03F284384F600476737 /* OptionalInt+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalInt+Additions.swift"; sourceTree = "<group>"; };
 		BE8CA04128439A3900476737 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		BE9C99C52846151A0091138D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BE9C99C728464FD50091138D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BEA4866B282BC88600C7EBD3 /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
 		BEAB805628439EB100155126 /* geoposition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = geoposition.json; sourceTree = "<group>"; };
 		BEAB80582843A09B00155126 /* GeoPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPosition.swift; sourceTree = "<group>"; };
@@ -119,8 +122,10 @@
 		BE1A7193282A677000CA453C /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				BE9C99C728464FD50091138D /* Info.plist */,
 				BE1A7194282A677000CA453C /* WeatherApp.swift */,
 				BE3B7D5D2838EEF000671CC1 /* Global.swift */,
+				BE9C99C4284614E70091138D /* Managers */,
 				BED9C2B62842B16E00FDE8C2 /* ViewModels */,
 				BE1A71A2282A6ED100CA453C /* Views */,
 				BED9C2AD2842756C00FDE8C2 /* Networkings */,
@@ -185,6 +190,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BE9C99C4284614E70091138D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BE9C99C52846151A0091138D /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		BEA4866A282BC83D00C7EBD3 /* HourlyForecastViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				BE1A71A5282A9E6B00CA453C /* ChunkView.swift */,
+				BEAB805E2843BE4200155126 /* WeatherIcon.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -223,10 +237,9 @@
 		BED9C2A62842657500FDE8C2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BED9C2A7284265BD00FDE8C2 /* CurrentCondition.swift */,
 				BEAB80582843A09B00155126 /* GeoPosition.swift */,
+				BED9C2A7284265BD00FDE8C2 /* CurrentCondition.swift */,
 				BEAB805C2843AFEF00155126 /* HourlyForecast.swift */,
-				BEAB805E2843BE4200155126 /* WeatherIcon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,6 +350,7 @@
 				BED9C2AA2842711200FDE8C2 /* RainFallView.swift in Sources */,
 				BEAB80592843A09B00155126 /* GeoPosition.swift in Sources */,
 				BE1A71AD282AB5DA00CA453C /* ForecastColumnView.swift in Sources */,
+				BE9C99C62846151A0091138D /* LocationManager.swift in Sources */,
 				BE1A7197282A677000CA453C /* HomeView.swift in Sources */,
 				BEAC69AE28394FBC00990938 /* AirQualityView.swift in Sources */,
 				BE3B7D5E2838EEF000671CC1 /* Global.swift in Sources */,
@@ -486,6 +500,8 @@
 				DEVELOPMENT_TEAM = DV4M5VPD3C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location for showing the weather.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -517,6 +533,8 @@
 				DEVELOPMENT_TEAM = DV4M5VPD3C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location for showing the weather.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
