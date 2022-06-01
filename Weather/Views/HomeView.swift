@@ -33,7 +33,8 @@ struct HomeView: View {
                         topEdge: topConstant + topEdge,
                         offsetY: offset,
                         geoPosition: vm.geoPosition,
-                        currentCondition: vm.currentCondition
+                        currentCondition: vm.currentCondition,
+                        hiLoTemps: vm.hiLoTemps
                     )
                     .offset(y: -offset)
                     .offset(y: offset > 0 ? offset / .screenWidth * 100 : 0) // drag down effect.

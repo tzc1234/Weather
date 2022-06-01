@@ -13,6 +13,7 @@ protocol NetworkManager {
     func fetchWeatherData(lat: Double, lon: Double) async throws -> WeatherData
 }
 
+// MARK: - WeatherNetworkManager
 final class WeatherNetworkManager: NetworkManager {
     private func getComponents(endPoint: WeatherEndPoint) -> URLComponents {
         var components = URLComponents()
@@ -60,6 +61,7 @@ final class WeatherNetworkManager: NetworkManager {
     }
 }
 
+// MARK: - MockNetworkManager
 final class MockNetworkManager: NetworkManager {
     func fetchWeatherData(lat: Double, lon: Double) async throws -> WeatherData {
         guard

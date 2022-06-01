@@ -20,7 +20,7 @@ final class HomeViewModel: ObservableObject {
     
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
-        subscriptLocationPermission()
+        subscriptLocationCoordinatePublisher()
     }
 }
 
@@ -29,11 +29,24 @@ extension HomeViewModel {
     var currentCondition: CurrentCondition? {
         currentConditions.first
     }
+    
+    var hiLoTemps: (hi: Int?, lo: Int?) {
+        var temps: Set<Double> = Set(hourlyForecasts.compactMap(\.temperature.value))
+        if let currentTemp = currentCondition?.temperature.metric.value {
+            temps.insert(currentTemp)
+        }
+        
+        if !temps.isEmpty {
+            return (hi: Int(temps.max()!), lo: Int(temps.min()!))
+        } else {
+            return (hi: nil, lo: nil)
+        }
+    }
 }
 
 // MARK: functions
 extension HomeViewModel {
-    private func subscriptLocationPermission() {
+    private func subscriptLocationCoordinatePublisher() {
         LocationManager.shared.coordinatePublisher
             .sink { [weak self] coordinate in
                 guard let self = self else { return }

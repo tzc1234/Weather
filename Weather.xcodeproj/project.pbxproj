@@ -122,7 +122,6 @@
 		BE1A7193282A677000CA453C /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				BE9C99C728464FD50091138D /* Info.plist */,
 				BE1A7194282A677000CA453C /* WeatherApp.swift */,
 				BE3B7D5D2838EEF000671CC1 /* Global.swift */,
 				BE9C99C4284614E70091138D /* Managers */,
@@ -134,6 +133,7 @@
 				BED9C2A32842646500FDE8C2 /* Resource */,
 				BE1A7198282A677800CA453C /* Assets.xcassets */,
 				BED9C2AE284277C900FDE8C2 /* LaunchScreen.storyboard */,
+				BE9C99C728464FD50091138D /* Info.plist */,
 				BE1A719A282A677800CA453C /* Preview Content */,
 			);
 			path = Weather;
@@ -210,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				BE1A71A5282A9E6B00CA453C /* ChunkView.swift */,
-				BEAB805E2843BE4200155126 /* WeatherIcon.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -239,6 +238,7 @@
 				BEAB80582843A09B00155126 /* GeoPosition.swift */,
 				BED9C2A7284265BD00FDE8C2 /* CurrentCondition.swift */,
 				BEAB805C2843AFEF00155126 /* HourlyForecast.swift */,
+				BEAB805E2843BE4200155126 /* WeatherIcon.swift */,
 				BEC4EBC828473C3300069E04 /* ErrorData.swift */,
 			);
 			path = Models;
