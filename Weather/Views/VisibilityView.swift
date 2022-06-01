@@ -19,6 +19,7 @@ struct VisibilityView: View {
                     .font(.title2)
             }
             .foregroundColor(.white)
+            .padding(.horizontal, 20.0)
         }
 
     }

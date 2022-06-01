@@ -40,7 +40,6 @@ struct HomeView: View {
                     
                     VStack(spacing: 10.0) {
                         HourlyForecastView(hourlyForecasts: vm.hourlyForecasts)
-//                        AirQualityView()
                         
                         HStack(spacing: 10.0) {
                             UVIndexView(currentCondition: vm.currentCondition)

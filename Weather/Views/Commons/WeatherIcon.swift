@@ -52,7 +52,7 @@ enum WeatherIcon: Int, Codable {
     @ViewBuilder
     var image: some View {
         switch self {
-        case .sunny, .mostlySunny, .partlySunny:
+        case .sunny, .mostlySunny:
             Image(systemName: "sun.max.fill")
                 .resizable()
                 .scaledToFit()
@@ -63,13 +63,13 @@ enum WeatherIcon: Int, Codable {
                 .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .yellow)
-        case .intermittentClouds, .mostlyCloudy:
+        case .intermittentClouds, .partlySunny:
             Image(systemName: "cloud.sun.fill")
                 .resizable()
                 .scaledToFit()
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.white, .yellow)
-        case .cloudy, .dreary:
+        case .mostlyCloudy, .cloudy, .dreary:
             Image(systemName: "cloud.fill")
                 .resizable()
                 .scaledToFit()

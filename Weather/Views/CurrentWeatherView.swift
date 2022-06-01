@@ -33,7 +33,6 @@ struct CurrentWeatherView: View {
             bottomSubview
         }
         .padding(.bottom, bottomPadding)
-//        .offset(y: getLittleUpwardOffsetY())
         .onPreferenceChange(CurrentWeatherLocHeightPreferenceKey.self) { height in
             locationTextHeight = height
         }
@@ -127,16 +126,6 @@ extension CurrentWeatherView {
 
 // MARK: functions
 extension CurrentWeatherView {
-    // Drag upward, this CurrentWeatherView will have a little move upward.
-//    private func getLittleUpwardOffsetY() -> CGFloat {
-//        if offsetY < 0.0 {
-//            let progress = offsetY / .chunkViewTopEdge * 12
-//            let newOffset = progress < -12 ? -12 : progress
-//            return newOffset
-//        }
-//        return 0.0
-//    }
-    
     private func getBottomSubviewOpacity() -> Double {
         let end = bottomSubviewHeight + bottomPadding + 3
         let offsetY = -offsetY

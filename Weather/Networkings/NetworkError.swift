@@ -10,16 +10,19 @@ import Foundation
 enum NetworkError: Error {
     case urlInvalid(String)
     case dataDecodeFailure(Error)
-    case invalidServerResponse
+    case invalidServerResponse(String)
+    case invalidStatusCode(path: String, statusCode: Int, errMsg: String)
     
     var errorMsg: String {
         switch self {
         case .urlInvalid(let urlStr):
-            return "Url: \(urlStr) Invalid."
+            return "\(urlStr) Invalid."
         case .dataDecodeFailure(let error):
             return "\(error)"
-        case .invalidServerResponse:
-            return "Invalid Server Response."
+        case .invalidServerResponse(let path):
+            return "\(path): Invalid server response."
+        case .invalidStatusCode(let path, let statusCode, let errMsg):
+            return "(\(statusCode)) \(path): \(errMsg)"
         }
     }
 }

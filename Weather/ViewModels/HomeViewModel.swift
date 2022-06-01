@@ -50,6 +50,7 @@ extension HomeViewModel {
     private func fetchWeathData(lat: Double, lon: Double) async {
         do {
             (geoPosition, currentConditions, hourlyForecasts) = try await networkManager.fetchWeatherData(lat: lat, lon: lon)
+//            print(hourlyForecasts)
         } catch {
             let errMsg = (error as? NetworkError)?.errorMsg ?? error.localizedDescription
             print(errMsg)

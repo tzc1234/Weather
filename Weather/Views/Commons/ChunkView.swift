@@ -44,7 +44,6 @@ struct ChunkView<Title: View, Content: View>: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     .frame(minHeight: 90.0)
                     .padding([.vertical])
-                    .padding(.horizontal, 20.0)
             }
             .background(.ultraThinMaterial)
             .clipShape(Corners(corners: [.bottomLeft, .bottomRight], radius: 12.0))

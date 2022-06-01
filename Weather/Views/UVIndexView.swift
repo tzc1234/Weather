@@ -23,6 +23,7 @@ struct UVIndexView: View {
                     .font(.headline)
                     .fontWeight(.semibold)
             }
+            .padding(.horizontal, 20.0)
         }
         .foregroundColor(.white)
         

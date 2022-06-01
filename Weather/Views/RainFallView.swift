@@ -21,6 +21,7 @@ struct RainFallView: View {
                     .font(.headline)
             }
             .foregroundColor(.white)
+            .padding(.horizontal, 20.0)
         }
     }
 }

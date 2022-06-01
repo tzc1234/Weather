@@ -23,7 +23,7 @@ final class WeatherNetworkManager: NetworkManager {
         return components
     }
     
-    private func request(endPoint: WeatherEndPoint) async throws -> (Data, URLResponse) {
+    private func request(endPoint: WeatherEndPoint) async throws -> Data {
         guard let url = getComponents(endPoint: endPoint).url else {
             throw NetworkError.urlInvalid(endPoint.path)
         }
@@ -31,27 +31,27 @@ final class WeatherNetworkManager: NetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = endPoint.method
         
-        return try await URLSession(configuration: .default).data(for: request)
+        let (data, response) = try await URLSession(configuration: .default).data(for: request)
+        
+        guard let response = response as? HTTPURLResponse else {
+            throw NetworkError.invalidServerResponse(endPoint.path)
+        }
+        
+        let statusCode = response.statusCode
+        guard 200..<300 ~= statusCode else {
+            let errorData = try JSONDecoder().decode(ErrorData.self, from: data)
+            throw NetworkError.invalidStatusCode(path: endPoint.path, statusCode: statusCode, errMsg: errorData.message)
+        }
+        
+        return data
     }
     
     func fetchWeatherData(lat: Double, lon: Double) async throws -> WeatherData {
-        let (geoData, geoResponse) = try await request(endPoint: .geoposition(lat: lat, lon: lon))
-        guard let response = geoResponse as? HTTPURLResponse, response.isSuccess else {
-            throw NetworkError.invalidServerResponse
-        }
-
+        let geoData = try await request(endPoint: .geoposition(lat: lat, lon: lon))
         let geo = try JSONDecoder().decode(GeoPosition.self, from: geoData)
 
-        async let (currentConditionsData, currentConditionsResponse) = request(endPoint: .currentConditions(locationKey: geo.key))
-        async let (hourlyForecastsData, hourlyForcastsResponse) = request(endPoint: .hourlyForecasts(locationKey: geo.key))
-
-        guard let response = try await currentConditionsResponse as? HTTPURLResponse, response.isSuccess else {
-            throw NetworkError.invalidServerResponse
-        }
-
-        guard let response = try await hourlyForcastsResponse as? HTTPURLResponse, response.isSuccess else {
-            throw NetworkError.invalidServerResponse
-        }
+        async let currentConditionsData = request(endPoint: .currentConditions(locationKey: geo.key))
+        async let hourlyForecastsData = request(endPoint: .hourlyForecasts(locationKey: geo.key))
 
         let currentConditions = try await JSONDecoder().decode([CurrentCondition].self, from: currentConditionsData)
         let hourlyForecasts = try await JSONDecoder().decode([HourlyForecast].self, from: hourlyForecastsData)
