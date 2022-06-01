@@ -54,8 +54,8 @@ final class WeatherNetworkManager: NetworkManager {
         async let currentConditionsData = request(endPoint: .currentConditions(locationKey: geo.key))
         async let hourlyForecastsData = request(endPoint: .hourlyForecasts(locationKey: geo.key))
 
-        let currentConditions = try await JSONDecoder().decode([CurrentCondition].self, from: currentConditionsData)
-        let hourlyForecasts = try await JSONDecoder().decode([HourlyForecast].self, from: hourlyForecastsData)
+        let currentConditions = try JSONDecoder().decode([CurrentCondition].self, from: await currentConditionsData)
+        let hourlyForecasts = try JSONDecoder().decode([HourlyForecast].self, from: await hourlyForecastsData)
 
         return (geo, currentConditions, hourlyForecasts)
     }
