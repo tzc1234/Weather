@@ -47,7 +47,7 @@ enum WeatherEndPoint: EndPoint {
     
     var apiKey: String {
         let apiKey = ""
-        assert(!apiKey.isEmpty, "Please set your AccuWeather apiKey inside the WeatherEndPoint.")
+        assert(!apiKey.isEmpty, "Please set your AccuWeather apiKey in the WeatherEndPoint.")
         return apiKey
     }
     

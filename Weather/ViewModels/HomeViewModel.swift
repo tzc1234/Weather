@@ -20,7 +20,7 @@ final class HomeViewModel: ObservableObject {
     
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
-        subscriptLocationCoordinatePublisher()
+        subscribeLocationCoordinatePublisher()
     }
 }
 
@@ -46,7 +46,7 @@ extension HomeViewModel {
 
 // MARK: functions
 extension HomeViewModel {
-    private func subscriptLocationCoordinatePublisher() {
+    private func subscribeLocationCoordinatePublisher() {
         LocationManager.shared.coordinatePublisher
             .sink { [weak self] coordinate in
                 guard let self = self else { return }
