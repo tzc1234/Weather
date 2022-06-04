@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var vm = HomeViewModel(networkManager: WeatherNetworkManager())
+    @StateObject private var vm = HomeViewModel(
+        locationManager: WeatherLocationManager(),
+        networkManager: WeatherNetworkManager()
+    )
+    
     @State private var offset: CGFloat = 0.0
     
     private let topConstant: CGFloat = 25.0

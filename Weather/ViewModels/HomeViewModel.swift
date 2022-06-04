@@ -16,9 +16,11 @@ final class HomeViewModel: ObservableObject {
     
     private var subscriptions = Set<AnyCancellable>()
     
+    private let locationManager: LocationManager
     private let networkManager: NetworkManager
     
-    init(networkManager: NetworkManager) {
+    init(locationManager: LocationManager, networkManager: NetworkManager) {
+        self.locationManager = locationManager
         self.networkManager = networkManager
         subscribeLocationCoordinatePublisher()
     }
@@ -47,7 +49,7 @@ extension HomeViewModel {
 // MARK: functions
 extension HomeViewModel {
     private func subscribeLocationCoordinatePublisher() {
-        LocationManager.shared.coordinatePublisher
+        locationManager.coordinatePublisher
             .sink { [weak self] coordinate in
                 guard let self = self else { return }
                 
@@ -63,7 +65,6 @@ extension HomeViewModel {
     private func fetchWeathData(lat: Double, lon: Double) async {
         do {
             (geoPosition, currentConditions, hourlyForecasts) = try await networkManager.fetchWeatherData(lat: lat, lon: lon)
-//            print(hourlyForecasts)
         } catch {
             let errMsg = (error as? NetworkError)?.errorMsg ?? error.localizedDescription
             print(errMsg)
@@ -71,6 +72,6 @@ extension HomeViewModel {
     }
     
     func checkIfLocationServiceEnabled() {
-        LocationManager.shared.checkIfLocationServiceEnabled()
+        locationManager.checkIfLocationServiceEnabled()
     }
 }

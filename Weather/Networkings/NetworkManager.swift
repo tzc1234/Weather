@@ -35,7 +35,7 @@ final class WeatherNetworkManager: NetworkManager {
         let (data, response) = try await URLSession(configuration: .default).data(for: request)
         
         guard let response = response as? HTTPURLResponse else {
-            throw NetworkError.invalidServerResponse(endPoint.path)
+            throw NetworkError.invalidServerResponse(path: endPoint.path)
         }
         
         let statusCode = response.statusCode

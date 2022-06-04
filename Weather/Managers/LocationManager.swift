@@ -8,19 +8,23 @@
 import CoreLocation
 import Combine
 
-final class LocationManager: NSObject {
-    static let shared = LocationManager()
-    
+protocol LocationManager {
+    var coordinatePublisher: PassthroughSubject<CLLocationCoordinate2D?, Never> { get }
+    func checkIfLocationServiceEnabled()
+}
+
+final class WeatherLocationManager: NSObject, LocationManager {
     private var clLocationManager: CLLocationManager?
+    
     let coordinatePublisher: PassthroughSubject<CLLocationCoordinate2D?, Never>
     
-    private override init() {
+    override init() {
         coordinatePublisher = PassthroughSubject<CLLocationCoordinate2D?, Never>()
     }
 }
 
 // MARK: functions
-extension LocationManager {
+extension WeatherLocationManager {
     func checkIfLocationServiceEnabled() {
         if CLLocationManager.locationServicesEnabled() {
             clLocationManager = CLLocationManager()
@@ -50,7 +54,7 @@ extension LocationManager {
 }
 
 // MARK: CLLocationManagerDelegate
-extension LocationManager: CLLocationManagerDelegate {
+extension WeatherLocationManager: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationAuthorization()
     }

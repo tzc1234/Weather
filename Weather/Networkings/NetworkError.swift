@@ -10,7 +10,7 @@ import Foundation
 enum NetworkError: Error {
     case urlInvalid(String)
     case dataDecodeFailure(Error)
-    case invalidServerResponse(String)
+    case invalidServerResponse(path: String)
     case invalidStatusCode(path: String, statusCode: Int, errMsg: String)
     
     var errorMsg: String {
